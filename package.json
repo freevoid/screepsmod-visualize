@@ -1,0 +1,39 @@
+{
+  "name": "screepsmod-visualize",
+  "version": "1.0.0",
+  "description": "Mod for the Screeps server to provide basic room visualization.",
+  "screeps_mod": true,
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freevoid/screepsmod-visualize.git"
+  },
+  "keywords": [
+    "screeps",
+    "mod",
+    "visualize",
+    "render",
+    "map"
+  ],
+  "author": "Nikolay Zakharov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freevoid/screepsmod-visualize/issues"
+  },
+  "homepage": "https://github.com/freevoid/screepsmod-visualize#readme",
+  "dependencies": {
+    "canvas": "^1.6.7",
+    "random-js": "^1.0.8"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "commander": "^2.12.1",
+    "mocha": "*"
+  }
+}

@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+const assert = require('assert'),
+    fs = require('fs'),
+    program = require('commander'),
+    drawing = require('../lib/drawing.js');
+
+program
+    .option('-t, --terrain <path>', 'Encoded terrain JSON file path')
+    .option('-m, --map-view <path>', 'Map view JSON file path')
+    .option('-o, --out <path>', 'Output path (SVG file)')
+    .parse(process.argv);
+
+assert(program.terrain !== undefined);
+assert(program.mapView !== undefined);
+assert(program.out !== undefined);
+
+let terrain = JSON.parse(fs.readFileSync(program.terrain, 'utf8')),
+    mapView = JSON.parse(fs.readFileSync(program.mapView, 'utf8')),
+    canvas = drawing.drawMap(terrain.terrain, mapView);
+
+fs.writeFile(program.out, canvas.toBuffer(), function(err) {
+    if (err) throw err;
+    console.log('Map written to', program.out);
+});

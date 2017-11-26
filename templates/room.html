@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<body>
+  <div id="container"></div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search),
+      room = urlParams.get('room');
+
+    function refresh(){
+      let map = document.getElementById('map');
+      map.setAttribute('src', getImageUrl());
+      //update src attribute with a cache buster query
+      setTimeout("refresh();", 50);
+    }
+
+    function getImageUrl() {
+      return '/api/visualize/room.svg?room=' + room;
+    }
+
+    (function() {
+      let container = document.getElementById('container'),
+        img = document.createElement('img');
+
+      img.setAttribute('alt', 'Map for room ' + room);
+      img.setAttribute('src', getImageUrl());
+      img.setAttribute('id', 'map');
+      container.appendChild(img);
+
+      refresh();
+    })();
+  </script>
+</body>
