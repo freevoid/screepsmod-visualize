@@ -2,6 +2,8 @@
 Mod for the [screeps](https://github.com/screeps/screeps) server to provide
 basic room visualization.
 
+[![NPM info](https://nodei.co/npm/screepsmod-visualize.png)](https://npmjs.org/package/screepsmod-visualize)
+
 ## Installation
 * `npm install screepsmod-visualize`
 * Add to `mods.json` or check that it was added automatically
