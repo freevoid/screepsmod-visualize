@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/freevoid/screepsmod-visualize#readme",
   "dependencies": {
-    "canvas": "^1.6.7",
+    "canvas": "^2.9.3",
     "random-js": "^1.0.8"
   },
   "devDependencies": {
